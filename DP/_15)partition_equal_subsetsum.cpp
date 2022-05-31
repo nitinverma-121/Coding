@@ -19,8 +19,8 @@ bool canPartition(vector<int> &arr, int n)
     
     for(int i=1; i< n+1; i++) {
         for(int j=1; j< sum+1; j++) {
-             if(arr[i]<= j) {
-                 bool op1= dp[i-1][j- arr[i]];
+             if(arr[i-1]<= j) {
+                 bool op1= dp[i-1][j- arr[i-1]];
                  bool op2= dp[i-1][j];
                  
                  dp[i][j]= op1 || op2;
